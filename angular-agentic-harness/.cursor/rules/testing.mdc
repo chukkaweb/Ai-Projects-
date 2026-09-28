@@ -1,0 +1,23 @@
+---
+description: Testing requirements and pre-complete verification commands
+globs: "**/*.{spec.ts,ts}"
+alwaysApply: false
+---
+
+# Testing
+
+Every new feature should include:
+
+- Unit tests
+- Component tests
+- E2E test for critical user flows
+
+Before completing a task run:
+
+```bash
+npm run verify
+```
+
+For UI-critical changes also run `npm run e2e`.
+
+Full detail: `.agent/rules/testing.md`

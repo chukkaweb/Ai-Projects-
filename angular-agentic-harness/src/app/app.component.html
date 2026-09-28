@@ -1,0 +1,21 @@
+<div class="shell" data-testid="app-shell">
+  <header class="topbar">
+    <a class="brand" routerLink="/dashboard" data-testid="app-brand">{{ title }}</a>
+    <nav data-testid="app-nav">
+      @for (item of navItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [attr.data-testid]="'nav-' + item.label.toLowerCase()"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+  </header>
+
+  <main data-testid="app-main">
+    <router-outlet />
+  </main>
+</div>

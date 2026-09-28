@@ -1,0 +1,19 @@
+---
+description: Angular standalone, signals, lazy routes, no component HTTP
+globs: src/app/**/*.{ts,html,scss}
+alwaysApply: false
+---
+
+# Angular
+
+- Use standalone components.
+- Use lazy-loaded routes for major features.
+- Prefer Signals for local UI state.
+- Use `ChangeDetectionStrategy.OnPush` and signal `input()` / `output()`.
+- Use RxJS for asynchronous streams.
+- Avoid unnecessary subscriptions.
+- Prefer `async` pipe or signal interop where appropriate.
+
+Components stay presentation-focused. No direct API / `HttpClient` calls from components.
+
+Full detail: `.agent/rules/angular.md` and `.agent/rules/rxjs.md`

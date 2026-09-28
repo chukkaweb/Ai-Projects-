@@ -1,0 +1,14 @@
+---
+description: Security — auth tokens, XSS, secrets, dependency hygiene
+globs: src/app/**/*.{ts,html}
+alwaysApply: false
+---
+
+# Security
+
+- Tokens only via `AuthService` + `authInterceptor`
+- No secrets in source or commits
+- Prefer template binding; avoid unsanitized `innerHTML`
+- HTTP only through `ApiService` / feature services
+
+Full detail: `.agent/rules/security.md`

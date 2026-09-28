@@ -1,0 +1,16 @@
+---
+description: Architecture folder rules — features/shared/core placement
+alwaysApply: true
+---
+
+# Architecture rules
+
+- New business functionality must go inside `features/`.
+- Do not put feature-specific logic inside `shared/`.
+- `core/` contains application-wide infrastructure only.
+- Components should remain presentation-focused.
+- API communication belongs in services.
+- Business state belongs in the feature state layer.
+- Avoid direct API calls from components.
+
+Full detail: `.agent/rules/architecture.md`

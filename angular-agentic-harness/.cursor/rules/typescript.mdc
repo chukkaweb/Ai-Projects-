@@ -1,0 +1,14 @@
+---
+description: TypeScript strict typing — no any, no duplicate models
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# TypeScript
+
+- Enable strict typing (do not weaken `tsconfig` strict flags).
+- Avoid `any`.
+- Prefer interfaces/types for API contracts.
+- Do not duplicate models — one canonical definition per contract.
+
+Full detail: `.agent/rules/typescript.md`

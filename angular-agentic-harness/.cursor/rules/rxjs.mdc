@@ -1,0 +1,16 @@
+---
+description: RxJS streams, avoid subscriptions, prefer async/signal interop
+globs: src/app/**/*.ts
+alwaysApply: false
+---
+
+# RxJS
+
+- Use RxJS for asynchronous streams.
+- Prefer Signals for local UI state.
+- Avoid unnecessary subscriptions.
+- Prefer `async` pipe or signal interop (`toSignal`, `takeUntilDestroyed`).
+
+API calls belong in services. Stores bridge Observables → signals.
+
+Full detail: `.agent/rules/rxjs.md`

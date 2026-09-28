@@ -1,0 +1,60 @@
+{
+  "name": "my-angular-app",
+  "version": "1.0.0",
+  "description": "Angular agentic harness — feature-sliced standalone app with agent rules, workflows, and CI guards",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "test:ci": "ng test --no-watch --browsers=ChromeHeadless --code-coverage",
+    "lint": "ng lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "validate:architecture": "tsx scripts/validate-architecture.ts",
+    "check:dependencies": "tsx scripts/check-dependencies.ts",
+    "generate:feature": "tsx scripts/generate-feature.ts",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui",
+    "verify": "npm run validate:architecture && npm run lint && npm run test:ci && npm run build",
+    "verify:full": "npm run verify && npm run e2e"
+  },
+  "dependencies": {
+    "@angular/animations": "^18.2.0",
+    "@angular/common": "^18.2.0",
+    "@angular/compiler": "^18.2.0",
+    "@angular/core": "^18.2.0",
+    "@angular/forms": "^18.2.0",
+    "@angular/platform-browser": "^18.2.0",
+    "@angular/platform-browser-dynamic": "^18.2.0",
+    "@angular/router": "^18.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.10"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.5",
+    "@angular-eslint/builder": "^18.4.3",
+    "@angular/cli": "^18.2.5",
+    "@angular/compiler-cli": "^18.2.0",
+    "@playwright/test": "^1.48.0",
+    "@types/jasmine": "~5.1.0",
+    "angular-eslint": "^18.4.3",
+    "eslint": "^9.39.5",
+    "jasmine-core": "~5.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "~5.5.2",
+    "typescript-eslint": "^8.70.1"
+  }
+}

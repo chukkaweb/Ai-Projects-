@@ -1,0 +1,15 @@
+---
+description: Angular agentic harness — always follow AGENTS.md and .agent rules
+alwaysApply: true
+---
+
+# Agentic harness
+
+Before implementing changes in this repo:
+
+1. Read `AGENTS.md` and `.agent/README.md` for the end-to-end agent loop.
+2. Follow `.agent/rules/` — especially `architecture.md`, `angular.md`, `typescript.md`, `rxjs.md`, `testing.md`, `security.md`.
+3. Mirror rules also live under `.cursor/rules/`.
+4. Use the matching playbook under `.agent/workflows/`.
+5. Keep feature isolation: no cross-feature imports; no feature logic in `shared/`.
+6. Before finishing, run `npm run verify` (and `npm run e2e` for UI-critical work).

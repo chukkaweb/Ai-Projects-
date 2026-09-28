@@ -1,0 +1,57 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #e8f1ff 0%, transparent 40%),
+    linear-gradient(180deg, #f7f9fc 0%, #eef2f7 100%);
+  color: #101828;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+.shell {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem 2.5rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #344054;
+  text-decoration: none;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.4rem;
+}
+
+nav a.active,
+nav a:hover {
+  background: rgba(23, 92, 211, 0.1);
+  color: #175cd3;
+}
+
+main {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #d0d5dd;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(6px);
+}

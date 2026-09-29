@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  postgres_db:
+    image: postgres:16-alpine
+    container_name: synthetic_postgres
+    environment:
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD: POSTGRES_PASSWORD
+      POSTGRES_DB: analytics_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app_user -d analytics_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  streamlit_app:
+    build: .
+    container_name: data_assistant_app
+    ports:
+      - "8501:8501"
+    environment:
+      - DB_HOST=postgres_db
+      - DB_PORT=5432
+      - DB_USER=app_user
+      - DB_PASSWORD=**DB_PASSWORD**
+      - DB_NAME=analytics_db
+      - GCP_PROJECT_ID=gd-gcp-gridu-genai
+      - LANGFUSE_PUBLIC_KEY=pk-...
+      - LANGFUSE_SECRET_KEY=sk-...
+      - LANGFUSE_HOST=https://cloud.langfuse.com
+    volumes:
+      - ~/.config/gcloud:/root/.config/gcloud:ro  # Binds local gcloud credentials for Vertex AI Auth
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

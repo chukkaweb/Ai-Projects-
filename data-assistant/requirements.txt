@@ -1,0 +1,20 @@
+# --- Core Google GenAI SDK (GA v1.0 / v2.0 or newer) ---
+google-genai>=2.9.0
+
+# --- Web Frontend Framework ---
+streamlit>=1.58.0
+
+# --- Structured Data Processing & Analytics ---
+pandas>=3.0.3
+seaborn>=0.13.2
+
+# --- PostgreSQL Relational Database Drivers ---
+sqlalchemy>=2.0.51
+psycopg2-binary>=2.9.12
+
+# --- LLM Observability & Operational Tracing ---
+langfuse>=4..0
+
+
+# --- Infrastructure Setup & Utilities ---
+python-dotenv>=1.2.2
